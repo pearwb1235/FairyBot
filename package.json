@@ -1,10 +1,10 @@
 {
-  "name": "Type your project name",
+  "name": "fairy-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "小精靈機器人",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node -x .js,.ts src",
+    "start": "babel-node -x .js,.ts -r dotenv/config src",
     "build": "npm run build.compile && npm run build.types",
     "build.compile": "babel src --out-dir dist -x .js,.ts --ignore **/*.d.ts,**/*.test.js,**/*.test.ts,**/__tests__ --delete-dir-on-start",
     "build.types": "tsc --project tsconfig.types.json && tsconfig-replace-paths -p tsconfig.types.json -s ./src -o ./dist",
@@ -27,9 +27,12 @@
     "@babel/plugin-transform-runtime": "^7.21.4",
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-typescript": "^7.21.5",
+    "@types/express": "^4.17.21",
+    "@types/react": "^18.2.37",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
     "@typescript-eslint/parser": "^5.59.2",
     "babel-plugin-root-import": "^6.6.0",
+    "dotenv": "^16.3.1",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -37,10 +40,21 @@
     "jest": "^29.5.0",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
+    "prisma": "^5.5.2",
     "tsconfig-replace-paths": "^0.0.14",
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@babel/runtime": "^7.21.5"
+    "@babel/runtime": "^7.21.5",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.16",
+    "@mui/material": "^5.14.17",
+    "@pearwb/logger": "^0.3.4",
+    "@prisma/client": "^5.5.2",
+    "express": "^4.18.2",
+    "next": "^14.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
